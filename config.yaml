@@ -1,0 +1,29 @@
+# config.yaml
+# Configuration for DeepSeek-V2 Omiixx-nova training and inference
+
+model:
+  name: deepseek-omiixx-nova
+  hidden_size: 12288
+  num_layers: 72
+  num_heads: 96
+  vocab_size: 32000
+  max_position_embeddings: 128000
+  moe_experts: 64
+
+training:
+  batch_size: 8
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  num_epochs: 10
+  gradient_accumulation_steps: 4
+  warmup_steps: 10000
+
+inference:
+  max_new_tokens: 256
+  temperature: 0.7
+  top_p: 0.9
+
+logging:
+  log_level: INFO
+  log_dir: ./logs
+
